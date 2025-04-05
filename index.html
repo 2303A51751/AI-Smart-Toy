@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Smart Toy</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1 class="title">AI Smart Toy</h1>
+      <nav>
+          <button class="nav-btn active" onclick="showPage('home')">Home</button>
+          <button class="nav-btn" onclick="showPage('play')">Play</button>
+          <button class="nav-btn" onclick="showPage('progress')">Progress</button>
+          <button class="nav-btn" onclick="showPage('settings')">Settings</button>
+      </nav>
+  </header>
+    <div class="card" id="mainCard">
+      <h2>What animal says "Meow"?</h2>
+      <div class="record-circle">
+        <p>🎤</p>
+        <p>REC</p>
+      </div>
+      <button class="record-btn" onclick="startRecognition()">Tap to Speak</button>
+      <div id="feedback" class="error-message">Waiting...</div>
+      <p class="difficulty" id="diffText">⭐ Difficulty: 1</p>
+    </div>
+  </div>
+
+  <script>
+    function startRecognition() {
+      document.getElementById("feedback").innerText = "Listening...";
+      fetch("/speak")
+        .then(res => res.json())
+        .then(data => {
+          const feedback = document.getElementById("feedback");
+          const diff = document.getElementById("diffText");
+
+          if (data.status === "correct") {
+            feedback.style.color = "green";
+            feedback.innerText = "✅ Correct! Well done!";
+          } else {
+            feedback.style.color = "red";
+            feedback.innerText = "❌ Try Again!";
+          }
+
+          diff.innerText = `⭐ Difficulty: ${data.difficulty}`;
+        })
+        .catch(err => {
+          console.error(err);
+          document.getElementById("feedback").innerText = "Listening..";
+        });
+    }
+    fetch("/speak")
+  .then(res => res.json())
+  .then(data => {
+    // Update UI based on backend response
+  });
+
+  </script>
+</body>
+</html>

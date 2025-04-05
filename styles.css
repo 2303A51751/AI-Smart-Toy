@@ -1,0 +1,85 @@
+body {
+  background: #f6f8fa;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+.title {
+  font-size: 2em;
+  margin-top: 20px;
+}
+.container {
+  padding: 20px;
+  
+}
+
+.card {
+  
+  background: rgb(143, 179, 214);
+  margin: auto;
+  padding: 20px;
+  border-radius: 10px;
+  width: 300px;
+  margin-top: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.record-btn {
+  background: #4CAF50;
+  color: rgb(243, 238, 238);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+}
+.record-btn:hover{
+  background: #1a761a;
+}
+.error-message {
+  margin-top: 10px;
+}
+.difficulty {
+  font-weight: bold;
+  margin-top: 10px;
+}
+.container {
+  width: 340px;
+  text-align: center;
+}
+.title {
+  color: #131417;
+  font-weight: bold;
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  background: #38404f;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.nav-btn {
+  background-color: transparent;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 14px;
+  color: white;
+}
+
+.nav-btn.active {
+  background-color: #23262e;
+  font-weight: bold;
+}
+.title {
+  color: #163794;
+  font-weight: bold;
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 10px;
+}
